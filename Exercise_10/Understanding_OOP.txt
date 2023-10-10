@@ -1,0 +1,66 @@
+OOP concept -- The major aim of OOP is to bind together the data and the functions that operate on a program so that no other part of the code can access this data except that function.
+
+In OOP method declaration majorly consists of 6 major components:-
+
+Access Modifier: In OOP Access modifiers matters the access type to the method, means from where/which way the method can be accessed in our applications. Referring to java there are 4 types of access modifiers.
+
+1)-Public -- Accessable through the the whole program, into any method of any classes.
+
+2)-Protected -- This kind of method are accessible to the internal boundry of that class or to that class's subclass even outside of the main class/package.
+
+3)-private -- This kind of method are accessible only with it's class.
+
+4)-default(defined without any modifiers)- Only within/inside the class where it is defined , only accessible inside there.
+
+What are the return types:- the data type of the returned value by the method can be any int double boolean array or any objects, it the method is not returning any data type then it is void method.
+
+Method Name:- 
+
+Parameter list:- static void Main(a,b) in this method a and b are the parameters if nothing () is fine, anyway these data types are the references to the arguements while the method gets called.
+
+Exception List:- error cathers or the exceptions that the method may throw beyond the targeted performance like any mismatch exception.
+
+Method Body:- Code Block inside the braces that executes to perform the intended operation.
+
+Method Signatures:- In method declaration method signature includes :-
+1) Method Name 2) Parameter list 3) Return Type.  
+==> Example: public int calculateSum(int a, int b) 
+
+
+Method Headers:- The method header includes everything including  access modifiers like publi private protected and optional modifiers like static final abstract except the method body:
+1) Method header inclued method signature.
+2)==> Example:= public int calculateSum(int a, int b){
+
+    return ...;
+}
+
+
+public static int calculateArea(int a, int b){
+    // Method Header== public static int calculateArea(int a, int b)
+    
+    int area = a*b;
+    return area;
+    // Above 2 line of code is the method body
+
+    // Except int area = a*b is the method signature,
+    // However i am not sure about the method signature this thing i will need to ask my lecturer or any other fellow friends.
+}
+
+
+Message Passing :- One object communicates with another object involving the object's name its function name and the information to be sent.
+
+The concept of OOP involves:-
+Class Object Method / Method Passing and 4 pillars or OOP.
+
+4 pillars of OOP are:- Abstraction, Encapsulation, Inheritance and Polymorphism
+
+
+A) Classes and Objects. 
+
+Class Definition:- The Classes are the user defined blueprint or the prototype to which we can give reference to any number of objects of the same behaviors, 
+classes lets us to define and play with the any data structure and methods of our own wish.
+
+
+
+
+Note:- all the above contents are tried to understood via the geeksforgeeks website.
