@@ -2,87 +2,88 @@
 
 package Exercise_10;
 
-// Abstraction: Creating an abstract base class "Shape" that defines common properties and methods for all shapes.
-abstract class Shape {
-    private String color;
-
-    public Shape(String color) {
-        this.color = color;
-    }
-
-    public abstract double area(); // Abstract method to calculate the area of a shape.
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    // Polymorphism: A method to display information about a shape.
-    public void displayInfo() {
-        System.out.println("Shape: " + getClass().getSimpleName());
-        System.out.println("Color: " + color);
-        System.out.println("Area: " + area());
-    }
-}
-
-// Inheritance: Creating specific shape classes (Rectangle and Circle) that inherit from the base class "Shape."
-class Rectangle extends Shape {
-    private double length;
-    private double width;
-
-    public Rectangle(String color, double length, double width) {
-        super(color);
-        this.length = length;
-        this.width = width;
-    }
-
-    @Override
-    public double area() {
-        return length * width;
-    }
-}
-
-class Circle extends Shape {
-    private double radius;
-
-    public Circle(String color, double radius) {
-        super(color);
-        this.radius = radius;
-    }
-
-    @Override
-    public double area() {
-        return Math.PI * radius * radius;
-    }
-}
-
-public class Practice {
-    public static void main(String[] args) {
-        // Encapsulation: Creating objects and using setter and getter methods to access and modify attributes.
-        Rectangle rectangle = new Rectangle("Blue", 5.0, 3.0);
-        Circle circle = new Circle("Red", 4.0);
-
-        System.out.println("Original Rectangle Color: " + rectangle.getColor());
-        rectangle.setColor("Green");
-        System.out.println("Modified Rectangle Color: " + rectangle.getColor());
-
-        System.out.println("Original Circle Color: " + circle.getColor());
-        circle.setColor("Yellow");
-        System.out.println("Modified Circle Color: " + circle.getColor());
-
-        // Polymorphism: Calling the displayInfo method on different shapes.
-        rectangle.displayInfo();
-        System.out.println("-------------");
-        circle.displayInfo();
-    }
-}
-
-
 public class Practice{
 
-    public static 
+    public static void main(String[] args){
+     
+        Person student1 = new Student("Bishal", 23, 290);
+        Person teacher1 = new Teacher("Mohammad", 24, 123);
+
+        // Polymorpism example to introduce the two objects student and teacher
+        student1.introduce();
+        teacher1.introduce();
+
+        // Encapsulation using getter and setter methods.
+        student1.setName("Bishal1");
+        student1.setAge(25);
+
+        teacher1.setName("Mohammad1");
+        teacher1.setAge(25);
+
+        System.out.println("Student's modified data: Name: "+ student1.getName()+" Age: "+student1.getAge());
+        System.out.println("Teacher's Modified data: Name: "+teacher1.getName() + " Age: "+teacher1.getAge());
+    }
 }
 
+// Inheritance example, Student class inherited from person.
+class Student extends Person{
+    // Student class constructor or property.
+    private int studentId;
+
+    public Student(String name, int age, int studentId){
+        super(name, age);
+        this.studentId = studentId;
+    }
+
+    // Polymorphism example , overriding the introduce method for student.
+    @Override
+    public void introduce(){
+        System.out.println("I am Student with name: "+getName()+" and my age is: "+getAge()+" My Student id is: "+studentId);
+    };
+} 
+
+class Teacher extends Person{
+    private int teacherId;
+
+    public Teacher(String name, int age, int teacherId){
+        super(name, age);
+        this.teacherId = teacherId;
+    };
+
+    // Polymorphism example to override the call the introduce method for teacher
+    @Override
+    public void introduce(){
+        System.out.println("I am teacher with name: "+getName()+" My teaching id is: "+teacherId);
+    }
+}
+
+// Abstract class Person with common properties and common abstract method .
+abstract class Person{
+    // Common constructors || common properties
+    private String name; 
+    private int age;
+
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+
+    // Encapsulation: getter and setter methods which can be common to both teacher as well as student.
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public String getName(){
+        return name;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public int getAge(){
+        return age;  
+    }
+
+    public abstract void introduce();
+}
