@@ -56,9 +56,9 @@ class Circle {
 
     public boolean isInternal(double x, double y){
         // calculating the distance between the point and center of circle by the distance formula,
-        double distance = formula. // pending here.
-
-        return ...;
+        double distance = Math.sqrt(Math.pow(x - center.getX(), 2) + Math.pow(y - center.getY(), 2));
+        // If the distance is less than or equal to the radius, the point is inside the circle else it is outside the circle.
+        return distance <= radius;
     }
 }
 
@@ -98,7 +98,7 @@ public class CircleCalculator {
             boolean isInternalChecked = circles[i].isInternal(x,y);
 
             System.out.println("Circle " + (i + 1) + " Surface: " + circleSurface);
-            System.out.println("Point (" + x + ", " + y + ") is inside Circle " + (i + 1) + ": " + isInternalChecked);
+            System.out.println("Point (" + x + ", " + y + ") is/is not inside Circle " + (i + 1) + ": " + isInternalChecked);
         }
     }
 }
